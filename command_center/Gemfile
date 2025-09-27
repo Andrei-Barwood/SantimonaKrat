@@ -1,0 +1,14 @@
+# command_center/Gemfile
+source 'https://rubygems.org'
+
+gem 'sinatra', '~> 3.0'           # Web interface
+gem 'json', '~> 2.6'              # Message serialization
+gem 'sqlite3', '~> 1.6'           # Local database
+gem 'websocket-driver', '~> 0.7'  # Real-time updates
+gem 'thin', '~> 1.8'              # Web server
+gem 'rake', '~> 13.0'             # Task management
+
+group :development do
+  gem 'rspec', '~> 3.12'          # Testing
+  gem 'pry', '~> 0.14'            # Debugging
+end
