@@ -1,0 +1,31 @@
+// shared/message_formats.json
+{
+  "status_update": {
+    "type": "object",
+    "properties": {
+      "message_type": {"const": "status_update"},
+      "drone_id": {"type": "string"},
+      "position": {
+        "type": "object",
+        "properties": {
+          "x": {"type": "number"},
+          "y": {"type": "number"},
+          "z": {"type": "number"}
+        }
+      },
+      "battery_level": {"type": "number"},
+      "state": {"type": "string"},
+      "timestamp": {"type": "integer"}
+    }
+  },
+  "command": {
+    "type": "object",
+    "properties": {
+      "message_type": {"const": "command"},
+      "drone_id": {"type": "string"},
+      "command": {"type": "string"},
+      "params": {"type": "object"},
+      "timestamp": {"type": "integer"}
+    }
+  }
+}
