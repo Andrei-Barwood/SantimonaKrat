@@ -1,0 +1,3 @@
+[submodule "drone_networking/src/security/mithril"]
+	path = drone_networking/src/security/mithril
+	url = https://github.com/Andrei-Barwood/Mithril.git
