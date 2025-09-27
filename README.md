@@ -1,38 +1,32 @@
-# 🚀 Interplanetary Construction Drone Project 🌌
+# 🚀 Interplanetary Construction Drone System 🌌
 
 *Building the Future, One Drone at a Time* ⚡
 
 ---
 
-## 🎯 Project Overview
+## 🎯 **Project Overview**
 
-Welcome to the **Interplanetary Construction Drone Network** - a revolutionary C-based system designed to construct space stations, mining facilities, and outposts across the galaxy! 🌠
+Welcome to the **Interplanetary Construction Drone Santimona Series** - a revolutionary dual-technology system designed to construct space stations, mining facilities, and outposts across the galaxy! 🌠
 
-This project combines cutting-edge networking, advanced physics simulation, and military-grade security to create an autonomous construction fleet capable of building structures in the most challenging environments. 🛰️
+This project combines **high-performance C firmware** for drone operations with **agile Ruby command center** for administration, creating an autonomous construction fleet capable of building structures in the most challenging environments. 🛰️
 
 ---
 
-## ✨ Key Features
+## ✨ **Dual Architecture**
 
-### 🚀 **Advanced Drone Fleet**
+### 🚀 **Drone Firmware (C)**
+- **Real-time Performance** - Critical drone operations
+- **Low-level Hardware Control** - Direct interaction with drone systems  
+- **Minimal Resource Usage** - Optimized for embedded systems
+- **Fast Response Times** - Lightning-fast navigation and construction
 - **50 Autonomous Drones** operating in perfect coordination
-- **Real-time Physics Simulation** with negative acceleration and geometric precision
-- **Multi-Environment Navigation** (Plane, Spherical, Space geometry)
 
-### 🌐 **Robust Networking**
-- **UDP/TCP Communication** with custom message protocols
-- **Drone-to-Drone** and **Drone-to-Command Center** communication
-- **Broadcast capabilities** for fleet coordination
-
-### 🔐 **Military-Grade Security**
-- **Mithril Security API Integration** 🔐
-- **End-to-End Encryption** for all communications
-- **Message Authentication** and integrity verification
-
-### 🏗️ **Intelligent Construction**
-- **Dynamic Building Plans** with component distribution
-- **Adaptive Construction Algorithms** for optimal efficiency
-- **Real-time Status Updates** and progress tracking
+### 🖥️ **Command Center (Ruby)**
+- **Rapid Development** - Quick admin interface creation
+- **Rich Tooling** - Advanced management and monitoring
+- **Easy Maintenance** - Flexible business logic handling
+- **User-Friendly** - Intuitive admin dashboards
+- **Scalable APIs** - Integration and reporting capabilities
 
 ---
 
@@ -40,21 +34,22 @@ This project combines cutting-edge networking, advanced physics simulation, and 
 
 ```
 ┌─────────────────┐    ┌──────────────────┐    ┌─────────────────┐
-│   Control       │    │   Drone Fleet    │    │   Security      │
+│   Command       │    │   Drone Fleet    │    │   Security      │
 │   Center        │◄──►│   (50 Units)     │◄──►│   Layer         │
-│   (Android/iOS) │    │   • Navigation   │    │   (Mithril)     │
-└─────────────────┘    │   • Physics      │    └─────────────────┘
+│   (Ruby)        │    │   • C Firmware   │    │   (Mithril)     │
+└─────────────────┘    │   • Navigation   │    └─────────────────┘
+                       │   • Physics      │
                        │   • Construction │
-                       │   • Communication│
                        └──────────────────┘
 ```
 
 ### 🧱 **Core Components**
 - **C Programming Foundation** - High-performance drone firmware
-- **Custom Message Protocols** - Efficient data transmission
+- **Ruby Command Center** - Agile admin interfaces
+- **Custom Message Protocols** - Efficient cross-technology communication
 - **Physics Engine** - Realistic space navigation
 - **Security Layer** - Protected communications
-- **Mobile Interfaces** - Android & iOS control apps
+- **Shared Protocols** - Unified data formats
 
 ---
 
@@ -62,9 +57,11 @@ This project combines cutting-edge networking, advanced physics simulation, and 
 
 ### Prerequisites
 - **GCC Compiler** (C99 compatible) 📋
+- **Ruby 3.0+** for command center 🐰
 - **Git** for version control 🔄
+- **Bundler** for Ruby dependencies 💎
 - **Make** build system ⚙️
-- **Mithril Security API** (automatically integrated via submodule) 🔐
+- **Mithril Security API** (automatically integrated) 🔐
 
 ### Installation
 
@@ -76,17 +73,44 @@ cd SantimonaKrat
 # 🔗 Initialize submodules (including Mithril security)
 git submodule update --init --recursive
 
-# ⚡ Compile the project
-make
+# 🚀 Deploy to drones (C firmware)
+./scripts/deploy_drone.sh
 
-# 🚀 Run the system
-./SantimonaKrat
+# 🖥️ Start command center (Ruby)
+cd command_center
+bundle install
+bundle exec thin start -p 3000
 ```
 
-### 📱 Mobile Integration
-- **Android**: Java/Kotlin interfaces ready for integration
-- **iOS**: Swift control systems prepared
-- **Cross-platform**: Seamless communication protocols
+### 📱 Access Command Center
+Open `http://localhost:3000` in your browser
+
+---
+
+## 📂 **Project Structure**
+
+```
+interplanetary_drone_system/
+├── drone_firmware/           # 🚀 C code for drones
+│   ├── src/                 # Source code
+│   ├── include/             # Headers
+│   ├── tests/               # Unit tests
+│   └── Makefile             # Build system
+├── command_center/           # 🖥️ Ruby code for command center
+│   ├── lib/                 # Core logic
+│   ├── app/                 # Web interface
+│   ├── config/              # Configuration
+│   ├── Gemfile              # Dependencies
+│   └── Rakefile             # Tasks
+├── shared/                 # 🤝 Shared protocols
+│   ├── message_formats.json # Message schemas
+│   └── drone_config.json    # Configuration
+├── scripts/                # 🛠️ Deployment scripts
+│   ├── deploy_drone.sh      # Deploy to drones
+│   └── deploy_command_center.sh # Deploy command center
+├── docs/                   # 📄 Documentation
+└── README.md               # 📋 This file
+```
 
 ---
 
@@ -111,13 +135,40 @@ make
 
 ## 📊 **Performance Metrics**
 
-| Feature | Status | Performance |
-|---------|--------|-------------|
-| 🚀 Drone Navigation | ✅ Stable | 99.9% accuracy |
-| 🔐 Security | ✅ Secure | AES-256 encryption |
-| 🌐 Networking | ✅ Robust | 10ms latency |
-| ⚙️ Physics | ✅ Advanced | Real-time simulation |
-| 🏗️ Construction | ✅ Intelligent | 95% efficiency |
+| Component | Technology | Performance | Purpose |
+|-----------|------------|-------------|---------|
+| 🚀 Drone Control | C | 99.9% real-time | Critical operations |
+| 🖥️ Admin Interface | Ruby | 95% efficiency | Management tasks |
+| 🔐 Security | Mithril | AES-256 | Encrypted communication |
+| 🌐 Networking | UDP/TCP | 10ms latency | Real-time data |
+| 🏗️ Construction | C + Ruby | 95% efficiency | Building algorithms |
+
+---
+
+## 🛠️ **Development Workflow**
+
+### For Drone Firmware (C)
+```bash
+cd drone_firmware
+# Make changes to C files
+make clean && make
+./scripts/deploy_drone.sh
+```
+
+### For Command Center (Ruby)
+```bash
+cd command_center
+# Make changes to Ruby files
+bundle install  # If new dependencies
+ruby app.rb     # Start development server
+```
+
+### Shared Changes
+```bash
+# Update shared message formats
+vim shared/message_formats.json
+# Both systems will use updated formats
+```
 
 ---
 
@@ -126,10 +177,15 @@ make
 We welcome contributions to make interplanetary construction even more awesome! 🌟
 
 1. 🍴 Fork the repository
-2. 🌟 Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. 💾 Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. 🚀 Push to the branch (`git push origin feature/AmazingFeature`)
-5. 📬 Open a Pull Request
+2. 🌟 Create feature branches in appropriate directories
+3. 💾 Commit changes with clear messages indicating C/Ruby
+4. 🚀 Push and create pull requests
+5. 📬 Describe how changes affect both systems
+
+### Branch Naming Convention
+- `c-drone-navigation-fix` - C changes
+- `ruby-command-center-feature` - Ruby changes  
+- `shared-protocol-update` - Shared changes
 
 ---
 
@@ -141,7 +197,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 🌟 **Acknowledgments**
 
-- **Kaamo Station** for inspiration 🌌
+- **Kaamo Station at the Shima Star System** for inspiration 🌌
 - **Mithril Security API** for robust encryption 🔐
 - **Open Source Community** for continuous innovation 🤝
 - **Future Space Explorers** for making this vision possible 🚀
@@ -152,8 +208,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 *Building Tomorrow's Space Infrastructure Today* 🛰️
 
-**Project Maintainer**: Kirtan Teg Singh    
-**GitHub**: [YourGitHubProfile](https://github.com/Andrei-Barwood)  
+**Project Maintainer**: Kirtan Teg Singh
+**GitHub**: [YourGitHubProfile](https://github.com/Andrei-Barwood)
 
 ---
 
@@ -163,4 +219,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **🚀 Ready to conquer the galaxy? Start building!** ⭐
 
-*[Star this repository](https://github.com/yourusername/drone_networking) if you're excited about interplanetary construction!* ⭐⭐⭐⭐⭐
+*[Star this repository](https://github.com/Andrei-Barwood/SantimonaKrat.git) if you're excited about interplanetary construction!* ⭐⭐⭐⭐⭐
